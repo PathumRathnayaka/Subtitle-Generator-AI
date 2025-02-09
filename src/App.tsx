@@ -58,19 +58,25 @@ function App() {
   const handleConvert = () => {
     setData(data.map(row => ({
       ...row,
-      translatedText: `Translated: ${row.originalText}`,
+      translatedText: ` ${row.originalText}`,
     })));
   };
 
   const handleDownload = () => {
-    const content = data
-        .map(row => `${row.originalText}\t${row.translatedText}`)
-        .join('\n');
-    const blob = new Blob([content], { type: 'text/plain' });
+    // Reconstruct the subtitle file format with edited data
+    let subtitleContent = '';
+    data.forEach((row) => {
+      subtitleContent += `${row.id}\n`;
+      subtitleContent += `${row.from} --> ${row.to}\n`;
+      subtitleContent += `${row.originalText}\n\n`;
+    });
+
+    // Create a Blob and trigger download
+    const blob = new Blob([subtitleContent], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'translations.txt';
+    a.download = 'updated_subtitles.txt'; // You can change the file name if needed
     a.click();
     URL.revokeObjectURL(url);
   };

@@ -63,7 +63,7 @@ function App() {
   };
 
   const handleDownload = () => {
-    // Reconstruct the subtitle file format with edited data
+    
     let subtitleContent = '';
     data.forEach((row) => {
       subtitleContent += `${row.id}\n`;
@@ -71,12 +71,12 @@ function App() {
       subtitleContent += `${row.originalText}\n\n`;
     });
 
-    // Create a Blob and trigger download
+    
     const blob = new Blob([subtitleContent], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'updated_subtitles.txt'; // You can change the file name if needed
+    a.download = 'updated_subtitles.txt'; 
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -89,7 +89,7 @@ function App() {
 
   return (
       <div className="min-h-screen bg-gray-100">
-        {/* Navigation Bar */}
+        
         <nav className="bg-white shadow-lg">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-between items-center h-16">
@@ -117,7 +117,7 @@ function App() {
           </div>
         </nav>
 
-        {/* Main Content */}
+        
         <div className="max-w-6xl mx-auto p-8">
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
             <div className="flex items-center gap-4">

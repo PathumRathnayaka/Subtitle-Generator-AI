@@ -37,7 +37,7 @@ A secure password generation tool that creates unique, platform-specific passwor
 
 | **Home Page** | **Generated Passwords** |
 |---------------|-------------------------|
-| ![Home Page](./screenshots/home.png) | ![Generated Passwords](./screenshots/passwords.png) |
+| ![Home Page](https://1drv.ms/i/c/020a2b4929f33e75/EZBeDdfHvz1Dslf_d0zJ0rIBzx3QqMVHXjtgundA9UiDWQ?e=hkUgW0) | ![Generated Passwords](./screenshots/passwords.png) |
 
 ---
 
